@@ -46,15 +46,26 @@ private int[] number;
 	public void set(int v, int location) {
 		//A. set the variable at the location passed in to the method
 		//   to the new value v
+		number[location] = v;
 	}
 	
 	//7. Complete the steps in the insert method
 	public void insert(int v, int location) {
 		//A. create and initialize a new int array to be one 
 		//   element longer than the member array
-		
+		int[] three = new int[number.length+1];
 		//B. Make a for loop that iterates through the new array
-
+		for (int i = 0; i < three.length; i++) {
+			if (i < location) {
+				three[i] = number[i];
+			}else if (i>location) {
+				three[i] = number [i-1];
+			}else{
+				three[i] = v;
+				
+			}
+			
+		}
 			//C. if i is less than location:
 		    //		set the element at i of the new array to the element at i of the member array
 			
@@ -65,7 +76,7 @@ private int[] number;
 		
 		
 		//F. set the member array equal to the new array
-	
+		number = three;
 	}
 	
 	//8. Run the tests again and check your progress
@@ -73,9 +84,17 @@ private int[] number;
 	//9. Complete the steps in the remove method
 	public void remove(int location) {
 		//A. create a new array that is one element smaller than the member array
-		
+		int[] four = new int[number.length -1];
 		//B. make a for loop to iterate through the member array
-		
+		for (int i = 0; i < number.length; i++) {
+			if (i<location) {
+				four[i] = number[i];
+			}else if (i>location) {
+				four[i-1] = number[i];
+			}else{
+			continue;
+			}
+		}
 			//C. if i  is less than location
 			//		set the element at i of the new array to the element at i of the member array
 			
@@ -85,18 +104,20 @@ private int[] number;
 			//E. else, continue;
 			
 		//F. set the member array equal to the new array
+		number = four;
 	}
 	
 	//10. Run the tests again the see if you are correct so far
 	
 	//11. Complete the size method so that it returns the length of the member array.
 	public int size() {
-		return 0;
+		return number.length;
 	}
 	
 	//12. Complete the clear array so that it sets the member array 
 	//    equal to a new integer array of size 0
 	public void clear() {
+		number = new int[0];
 	}
 	
 	//13. Run the test again to see if you are finished.
