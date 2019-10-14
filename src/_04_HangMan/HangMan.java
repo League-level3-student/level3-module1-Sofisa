@@ -81,6 +81,7 @@ public class HangMan implements KeyListener {
 
 			}
 		}label.setText(blanks);
+		
 	}
 
 	@Override
