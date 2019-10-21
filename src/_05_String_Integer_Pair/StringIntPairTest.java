@@ -14,6 +14,7 @@ class StringIntPairTest {
 		sip.put("THREE", 3);
 		sip.put("FOUR", 4);
 		
+		assertFalse(sip.eatBanana());
 		assertEquals(1, sip.get("ONE"));
 		assertEquals(2, sip.get("TWO"));
 		assertEquals(3, sip.get("THREE"));
